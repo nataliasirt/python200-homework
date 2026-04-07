@@ -4,6 +4,7 @@ Warmup exercises for Assignment 01
 
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Pandas Q1: Create DataFrame and display properties
 
@@ -131,6 +132,81 @@ print("=" * 50)
 random_normal = np.random.normal(loc=0, scale=1, size=200)
 print(f"Mean: {random_normal.mean()}")
 print(f"Standard Deviation: {random_normal.std()}")
+
+print("\n" + "=" * 50)
+
+# --- Matplotlib ---
+# Matplotlib Q1: Line plot of squares
+print("Matplotlib Question 1")
+print("=" * 50)
+x = [0, 1, 2, 3, 4, 5]
+y = [0, 1, 4, 9, 16, 25]
+plt.figure(figsize=(8, 5))
+plt.plot(x, y)
+plt.title("Squares")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.grid(True)
+plt.savefig("outputs/matplotlib_q1_squares.png")
+plt.close()
+print("Saved plot to outputs/matplotlib_q1_squares.png")
+
+print("\n" + "=" * 50)
+# Matplotlib Q2: Bar plot of subject scores
+print("Matplotlib Question 2")
+print("=" * 50)
+subjects = ["Math", "Science", "English", "History"]
+scores   = [88, 92, 75, 83]
+plt.figure(figsize=(8, 5))
+plt.bar(subjects, scores)
+plt.title("Subject Scores")
+plt.xlabel("Subject")
+plt.ylabel("Score")
+plt.savefig("outputs/matplotlib_q2_subject_scores.png")
+plt.close()
+print("Saved plot to outputs/matplotlib_q2_subject_scores.png")
+
+print("\n" + "=" * 50)
+# Matplotlib Q3: Scatter plot with two datasets
+print("Matplotlib Question 3")
+print("=" * 50)
+x1, y1 = [1, 2, 3, 4, 5], [2, 4, 5, 4, 5]
+x2, y2 = [1, 2, 3, 4, 5], [5, 4, 3, 2, 1]
+plt.figure(figsize=(8, 5))
+plt.scatter(x1, y1, color="blue", label="Dataset 1")
+plt.scatter(x2, y2, color="red", label="Dataset 2")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.legend()
+plt.title("Scatter Plot - Two Datasets")
+plt.grid(True)
+plt.savefig("outputs/matplotlib_q3_scatter.png")
+plt.close()
+print("Saved plot to outputs/matplotlib_q3_scatter.png")
+
+print("\n" + "=" * 50)
+# Matplotlib Q4: Subplots with line and bar plots
+print("Matplotlib Question 4")
+print("=" * 50)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# Left subplot: line plot
+ax1.plot(x, y)
+ax1.set_title("Squares")
+ax1.set_xlabel("x")
+ax1.set_ylabel("y")
+ax1.grid(True)
+
+# Right subplot: bar plot
+ax2.bar(subjects, scores)
+ax2.set_title("Subject Scores")
+ax2.set_xlabel("Subject")
+ax2.set_ylabel("Score")
+
+plt.tight_layout()
+plt.savefig("outputs/matplotlib_q4_subplots.png")
+plt.close()
+print("Saved plot to outputs/matplotlib_q4_subplots.png")
 
 print("\n" + "=" * 50)
 
