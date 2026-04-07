@@ -3,6 +3,7 @@ Warmup exercises for Assignment 01
 """
 
 import pandas as pd
+import numpy as np
 
 # Pandas Q1: Create DataFrame and display properties
 
@@ -74,3 +75,62 @@ top3 = df.sort_values(by="grade", ascending=False).head(3)
 print(top3)
 
 print("\n" + "=" * 50)
+
+# --- NumPy ---
+# NumPy Q1: Create 1D array from list and print properties
+print("NumPy Question 1")
+print("=" * 50)
+arr1d = np.array([10, 20, 30, 40, 50])
+print(f"Shape: {arr1d.shape}")
+print(f"Dtype: {arr1d.dtype}")
+print(f"Ndim: {arr1d.ndim}")
+
+print("\n" + "=" * 50)
+# NumPy Q2: Create 2D array and print shape and size
+print("NumPy Question 2")
+print("=" * 50)
+arr2d = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+print(f"Shape: {arr2d.shape}")
+print(f"Size: {arr2d.size}")
+
+print("\n" + "=" * 50)
+# NumPy Q3: Slice top-left 2x2 block from 2D array
+print("NumPy Question 3")
+print("=" * 50)
+top_left_2x2 = arr2d[0:2, 0:2]
+print(top_left_2x2)
+
+print("\n" + "=" * 50)
+# NumPy Q4: Create zeros and ones arrays
+print("NumPy Question 4")
+print("=" * 50)
+zeros_3x4 = np.zeros((3, 4))
+print("3x4 array of zeros:")
+print(zeros_3x4)
+ones_2x5 = np.ones((2, 5))
+print("\n2x5 array of ones:")
+print(ones_2x5)
+
+print("\n" + "=" * 50)
+# NumPy Q5: Create array using arange and compute statistics
+print("NumPy Question 5")
+print("=" * 50)
+arr_arange = np.arange(0, 50, 5)
+print(f"Array: {arr_arange}")
+print(f"Shape: {arr_arange.shape}")
+print(f"Mean: {arr_arange.mean()}")
+print(f"Sum: {arr_arange.sum()}")
+print(f"Standard Deviation: {arr_arange.std()}")
+
+print("\n" + "=" * 50)
+# NumPy Q6: Generate random normal distribution and compute statistics
+print("NumPy Question 6")
+print("=" * 50)
+random_normal = np.random.normal(loc=0, scale=1, size=200)
+print(f"Mean: {random_normal.mean()}")
+print(f"Standard Deviation: {random_normal.std()}")
+
+print("\n" + "=" * 50)
+
