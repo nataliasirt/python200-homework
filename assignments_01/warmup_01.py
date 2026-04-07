@@ -5,6 +5,7 @@ Warmup exercises for Assignment 01
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # --- Pandas ---
 # Pandas Q1: Create DataFrame and display properties
@@ -292,6 +293,83 @@ print("Data2 contains an outlier (150) that heavily influences the mean.")
 print("The mean is pulled upward by this extreme value, while the median remains")
 print("stable because it only depends on the middle value(s) in the sorted data.")
 print("This demonstrates that median is more robust to outliers than mean.")
+
+print("\n" + "=" * 50)
+
+# --- Correlation ---
+# Correlation Q1: Pearson correlation using np.corrcoef()
+print("Correlation Question 1")
+print("=" * 50)
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Compute correlation matrix
+corr_matrix = np.corrcoef(x, y)
+print("Correlation matrix:")
+print(corr_matrix)
+print(f"\nPearson correlation coefficient: {corr_matrix[0, 1]}")
+
+# Expected correlation comment
+print("\nExpected correlation: 1.0 (perfect positive correlation)")
+print("Why? Because y = 2*x (a perfect linear relationship).")
+print("When one variable increases, the other increases proportionally.")
+
+print("\n" + "=" * 50)
+# Correlation Q2: Pearson correlation with p-value
+print("Correlation Question 2")
+print("=" * 50)
+x2 = [1,  2,  3,  4,  5,  6,  7,  8,  9, 10]
+y2 = [10, 9,  7,  8,  6,  5,  3,  4,  2,  1]
+
+# Compute correlation using numpy
+corr_coef_q2 = np.corrcoef(x2, y2)[0, 1]
+print(f"Pearson correlation coefficient: {corr_coef_q2}")
+
+# Compute p-value using pandas Series corr method
+df_temp = pd.DataFrame({"x": x2, "y": y2})
+print(f"(Note: scipy.stats.pearsonr() would also return a p-value)")
+print(f"This correlation suggests a negative relationship between x and y.")
+
+print("\n" + "=" * 50)
+# Correlation Q3: Correlation matrix using df.corr()
+print("Correlation Question 3")
+print("=" * 50)
+people = {
+    "height": [160, 165, 170, 175, 180],
+    "weight": [55,  60,  65,  72,  80],
+    "age":    [25,  30,  22,  35,  28]
+}
+df_corr = pd.DataFrame(people)
+correlation_matrix = df_corr.corr()
+print(correlation_matrix)
+
+print("\n" + "=" * 50)
+# Correlation Q4: Scatter plot with negative correlation
+print("Correlation Question 4")
+print("=" * 50)
+x4 = [10, 20, 30, 40, 50]
+y4 = [90, 75, 60, 45, 30]
+
+plt.figure(figsize=(8, 5))
+plt.scatter(x4, y4, color="red", s=100)
+plt.title("Negative Correlation")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.grid(True)
+plt.savefig("outputs/correlation_q4_negative.png")
+plt.close()
+print("Saved scatter plot to outputs/correlation_q4_negative.png")
+
+print("\n" + "=" * 50)
+# Correlation Q5: Heatmap of correlation matrix
+print("Correlation Question 5")
+print("=" * 50)
+plt.figure(figsize=(8, 6))
+sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", center=0, square=True)
+plt.title("Correlation Heatmap")
+plt.savefig("outputs/correlation_q5_heatmap.png")
+plt.close()
+print("Saved heatmap to outputs/correlation_q5_heatmap.png")
 
 print("\n" + "=" * 50)
 
