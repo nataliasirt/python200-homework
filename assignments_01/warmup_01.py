@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy import stats
 
 # --- Pandas ---
 # Pandas Q1: Create DataFrame and display properties
@@ -293,6 +294,76 @@ print("Data2 contains an outlier (150) that heavily influences the mean.")
 print("The mean is pulled upward by this extreme value, while the median remains")
 print("stable because it only depends on the middle value(s) in the sorted data.")
 print("This demonstrates that median is more robust to outliers than mean.")
+
+print("\n" + "=" * 50)
+
+# --- Hypothesis Testing ---
+# Hypothesis Question 1: Independent samples t-test
+print("Hypothesis Question 1")
+print("=" * 50)
+group_a = [72, 68, 75, 70, 69, 73, 71, 74]
+group_b = [80, 85, 78, 83, 82, 86, 79, 84]
+
+t_stat, p_val = stats.ttest_ind(group_a, group_b)
+print(f"T-statistic: {t_stat}")
+print(f"P-value: {p_val}")
+
+print("\n" + "=" * 50)
+# Hypothesis Question 2: Interpret p-value at alpha = 0.05
+print("Hypothesis Question 2")
+print("=" * 50)
+alpha = 0.05
+if p_val < alpha:
+    print(f"Result is statistically significant (p-value {p_val:.4f} < {alpha})")
+    print("We reject the null hypothesis.")
+else:
+    print(f"Result is NOT statistically significant (p-value {p_val:.4f} >= {alpha})")
+    print("We fail to reject the null hypothesis.")
+
+print("\n" + "=" * 50)
+# Hypothesis Question 3: Paired t-test
+print("Hypothesis Question 3")
+print("=" * 50)
+before = [60, 65, 70, 58, 62, 67, 63, 66]
+after  = [68, 70, 76, 65, 69, 72, 70, 71]
+
+t_stat_paired, p_val_paired = stats.ttest_rel(before, after)
+print(f"T-statistic: {t_stat_paired}")
+print(f"P-value: {p_val_paired}")
+
+print("\n" + "=" * 50)
+# Hypothesis Question 4: One-sample t-test
+print("Hypothesis Question 4")
+print("=" * 50)
+scores = [72, 68, 75, 70, 69, 74, 71, 73]
+benchmark = 70
+
+t_stat_one_sample, p_val_one_sample = stats.ttest_1samp(scores, benchmark)
+print(f"T-statistic: {t_stat_one_sample}")
+print(f"P-value: {p_val_one_sample}")
+print(f"Testing if mean of scores is significantly different from benchmark {benchmark}")
+
+print("\n" + "=" * 50)
+# Hypothesis Question 5: One-tailed t-test (group_a < group_b)
+print("Hypothesis Question 5")
+print("=" * 50)
+t_stat_one_tailed, p_val_one_tailed = stats.ttest_ind(group_a, group_b, alternative='less')
+print(f"One-tailed test (group_a < group_b)")
+print(f"T-statistic: {t_stat_one_tailed}")
+print(f"P-value: {p_val_one_tailed}")
+
+print("\n" + "=" * 50)
+# Hypothesis Question 6: Plain-language conclusion for Q1
+print("Hypothesis Question 6")
+print("=" * 50)
+conclusion = (
+    f"The independent samples t-test comparing group_a (mean={np.mean(group_a):.1f}) "
+    f"and group_b (mean={np.mean(group_b):.1f}) shows that group_b has significantly "
+    f"higher scores than group_a (t={t_stat:.3f}, p={p_val:.4f}). "
+    f"This difference is extremely unlikely to occur by chance alone, suggesting a "
+    f"real and meaningful difference between the two groups."
+)
+print(conclusion)
 
 print("\n" + "=" * 50)
 
