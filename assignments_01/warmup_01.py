@@ -444,3 +444,51 @@ print("Saved heatmap to outputs/correlation_q5_heatmap.png")
 
 print("\n" + "=" * 50)
 
+# --- Pipelines ---
+# Pipeline Question 1: Data pipeline with plain functions
+print("Pipeline Question 1")
+print("=" * 50)
+
+# Define the array with missing values
+arr = np.array([12.0, 15.0, np.nan, 14.0, 10.0, np.nan, 18.0, 14.0, 16.0, 22.0, np.nan, 13.0])
+
+# Step 1: Create a Series from the array
+def create_series(arr):
+    """Takes a NumPy array and returns a pandas Series with the name 'values'."""
+    return pd.Series(arr, name="values")
+
+# Step 2: Clean the data by removing NaN values
+def clean_data(series):
+    """Takes a Series, removes NaN values using .dropna(), and returns the cleaned Series."""
+    return series.dropna()
+
+# Step 3: Summarize the data
+def summarize_data(series):
+    """
+    Takes a Series and returns a dictionary with mean, median, std, and mode.
+    """
+    summary = {
+        "mean": series.mean(),
+        "median": series.median(),
+        "std": series.std(),
+        "mode": series.mode()[0]
+    }
+    return summary
+
+# Step 4: Create the pipeline
+def data_pipeline(arr):
+    """Chains the three functions together: create_series -> clean_data -> summarize_data."""
+    series = create_series(arr)
+    cleaned_series = clean_data(series)
+    summary = summarize_data(cleaned_series)
+    return summary
+
+# Run the pipeline and print results
+result = data_pipeline(arr)
+print(f"Mean: {result['mean']}")
+print(f"Median: {result['median']}")
+print(f"Std: {result['std']}")
+print(f"Mode: {result['mode']}")
+
+print("\n" + "=" * 50)
+
