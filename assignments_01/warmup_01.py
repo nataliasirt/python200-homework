@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+# --- Pandas ---
 # Pandas Q1: Create DataFrame and display properties
 
 print("=" * 50)
@@ -33,7 +34,6 @@ print(df.dtypes)
 
 print("\n" + "=" * 50)
 
-# --- Pandas ---
 # Pandas Q2: Filter passed students with grade above 80
 print("Pandas Question 2")
 print("=" * 50)
@@ -207,6 +207,91 @@ plt.tight_layout()
 plt.savefig("outputs/matplotlib_q4_subplots.png")
 plt.close()
 print("Saved plot to outputs/matplotlib_q4_subplots.png")
+
+print("\n" + "=" * 50)
+
+# --- Descriptive Statistics ---
+# Descriptive Stats Q1: Compute mean, median, variance, and standard deviation
+print("Descriptive Stats Question 1")
+print("=" * 50)
+data = [12, 15, 14, 10, 18, 22, 13, 16, 14, 15]
+print(f"Mean: {np.mean(data)}")
+print(f"Median: {np.median(data)}")
+print(f"Variance: {np.var(data)}")
+print(f"Standard Deviation: {np.std(data)}")
+
+print("\n" + "=" * 50)
+# Descriptive Stats Q2: Histogram of random normal distribution
+print("Descriptive Stats Question 2")
+print("=" * 50)
+scores = np.random.normal(65, 10, 500)
+plt.figure(figsize=(8, 5))
+plt.hist(scores, bins=20)
+plt.title("Distribution of Scores")
+plt.xlabel("Score")
+plt.ylabel("Frequency")
+plt.savefig("outputs/descriptive_stats_q2_histogram.png")
+plt.close()
+print("Saved histogram to outputs/descriptive_stats_q2_histogram.png")
+
+print("\n" + "=" * 50)
+# Descriptive Stats Q3: Boxplot comparing two groups
+print("Descriptive Stats Question 3")
+print("=" * 50)
+group_a = [55, 60, 63, 70, 68, 62, 58, 65]
+group_b = [75, 80, 78, 90, 85, 79, 82, 88]
+plt.figure(figsize=(8, 5))
+plt.boxplot([group_a, group_b], labels=["Group A", "Group B"])
+plt.title("Score Comparison")
+plt.ylabel("Score")
+plt.savefig("outputs/descriptive_stats_q3_boxplot.png")
+plt.close()
+print("Saved boxplot to outputs/descriptive_stats_q3_boxplot.png")
+
+print("\n" + "=" * 50)
+# Descriptive Stats Q4: Side-by-side boxplots comparing normal and exponential distributions
+print("Descriptive Stats Question 4")
+print("=" * 50)
+normal_data = np.random.normal(50, 5, 200)
+skewed_data = np.random.exponential(10, 200)
+
+plt.figure(figsize=(8, 5))
+plt.boxplot([normal_data, skewed_data], labels=["Normal", "Exponential"])
+plt.title("Distribution Comparison")
+plt.ylabel("Value")
+plt.savefig("outputs/descriptive_stats_q4_distributions.png")
+plt.close()
+print("Saved distribution comparison to outputs/descriptive_stats_q4_distributions.png")
+
+# Comment on skewness and appropriate statistics
+print("\nComment on distributions:")
+print("The exponential distribution is more skewed (right-skewed).")
+print("For the normal distribution, mean and median are similar, so either works well.")
+print("For the exponential (skewed) distribution, median is more appropriate because it's robust to outliers.")
+
+print("\n" + "=" * 50)
+# Descriptive Stats Q5: Mean, median, and mode comparison
+print("Descriptive Stats Question 5")
+print("=" * 50)
+data1 = [10, 12, 12, 16, 18]
+data2 = [10, 12, 12, 16, 150]
+
+print("Data1: [10, 12, 12, 16, 18]")
+print(f"Mean: {np.mean(data1)}")
+print(f"Median: {np.median(data1)}")
+print(f"Mode: {pd.Series(data1).mode()[0]}")
+
+print("\nData2: [10, 12, 12, 16, 150]")
+print(f"Mean: {np.mean(data2)}")
+print(f"Median: {np.median(data2)}")
+print(f"Mode: {pd.Series(data2).mode()[0]}")
+
+# Comment on why mean and median differ for data2
+print("\nWhy are median and mean so different for data2?")
+print("Data2 contains an outlier (150) that heavily influences the mean.")
+print("The mean is pulled upward by this extreme value, while the median remains")
+print("stable because it only depends on the middle value(s) in the sorted data.")
+print("This demonstrates that median is more robust to outliers than mean.")
 
 print("\n" + "=" * 50)
 
