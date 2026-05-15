@@ -1,0 +1,15 @@
+Groundwork Coffee Co. Loyalty Program
+
+Groundwork Rewards is the cafe loyalty program for regular customers.
+
+How it works:
+- Customers can join the loyalty program online or in the cafe.
+- Members earn 1 point for every $1 spent on qualifying cafe purchases.
+- After reaching 100 points, members can redeem the reward for a free drink.
+- Members also receive occasional promotional offers and a birthday reward.
+
+Program reminders:
+- Customers should give the phone number or account tied to their rewards
+  profile at checkout so the visit counts toward points.
+- Rewards and promotions may change over time, so store staff can confirm the
+  latest details if needed.

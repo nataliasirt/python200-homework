@@ -1,0 +1,19 @@
+Groundwork Coffee Co. Hours
+
+Primary cafe reference: Venice flagship on Rose Avenue.
+
+Cafe hours:
+- Monday through Friday: 6:00 a.m. to 4:00 p.m.
+- Saturday and Sunday: 6:00 a.m. to 5:00 p.m.
+
+Kitchen hours:
+- Monday through Friday: 6:00 a.m. to 3:00 p.m.
+- Saturday and Sunday: 6:00 a.m. to 4:00 p.m.
+
+Location:
+671 Rose Ave.
+Venice, CA 90291
+
+Groundwork also operates other cafes, but when a customer asks generally about
+weekend hours, use the Venice flagship as the default reference for this
+document set.
