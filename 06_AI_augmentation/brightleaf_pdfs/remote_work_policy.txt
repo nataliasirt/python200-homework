@@ -1,0 +1,15 @@
+BrightLeaf Solar Remote Work and Equipment Policy
+
+Approved remote employees are responsible for protecting company equipment and
+data while working outside a BrightLeaf office.
+
+Remote work requirements:
+- Connect to internal tools using the company VPN.
+- Do not store sensitive files on personal devices.
+- Keep laptops physically secure during travel and at home.
+- Use only company-approved collaboration and file-sharing tools.
+- Notify IT immediately if a device is lost, stolen, or believed to be
+  compromised.
+
+This policy applies to U.S.-based employees whose roles are approved for remote
+or hybrid work arrangements.

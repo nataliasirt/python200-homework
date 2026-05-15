@@ -1,0 +1,13 @@
+BrightLeaf Solar Security Policies
+
+BrightLeaf Solar maintains the following core security requirements:
+- Multi-factor authentication is required for email, VPN, payroll, and all
+  cloud business systems.
+- Company laptops must use full-disk encryption and automatic screen lock after
+  10 minutes of inactivity.
+- Employees must use the approved password manager and may not share passwords.
+- Access to customer and employee data is granted by role and reviewed
+  quarterly.
+- Security incidents, suspicious emails, and lost devices must be reported to
+  the security team immediately.
+- Software updates and critical patches must be installed as soon as practical.
