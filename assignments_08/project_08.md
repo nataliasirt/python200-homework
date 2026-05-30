@@ -2,7 +2,7 @@
 
 ## Video Link
 
-Add your video link here.
+https://1drv.ms/v/c/54ffc85db90d581c/IQALdYAJW4nJQIillHRjNW9YAbWQc2Z5qnn5gblzznpKzsE?e=mLnvai
 
 ## Portal Walkthrough Notes
 
@@ -21,7 +21,7 @@ The most surprising part was how quickly the GPU workload cost increased compare
 
 ## Script Output
 
-After updating and running `project_08.py` in Cloud Shell, the script printed the monthly VM-only estimates for the two scenarios. The expected output with the current Linux VM rates is:
+After updating and running `project_08.py` in Cloud Shell, the script printed the monthly VM-only estimates for the two scenarios:
 
 ```text
 === Monthly Cost Estimates ===
