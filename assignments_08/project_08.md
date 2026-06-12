@@ -14,8 +14,10 @@ I built two cost scenarios in the Azure Pricing Calculator for East US on Linux.
 
 Using current Linux VM rates, the lightweight `Standard_B1s` compute came out to about `$1.66` per month (`$0.0104/hour x 160 hours`). The GPU VM portion of Scenario B came out to about `$2233.80` per month (`$3.06/hour x 730 hours`), which shows how dramatically more expensive GPU compute is than a small basic VM. My full Pricing Calculator totals were:
 
-- Scenario A total: `$[fill in your calculator total]`
-- Scenario B total: `$[fill in your calculator total]`
+- Scenario A total: `$1.66`
+- Scenario B total: `$2989.02`
+
+For Scenario A, I used a `Standard_B1s` Linux VM at `$0.0104/hour` for `160` hours per month, which gives `0.0104 x 160 = $1.66` after rounding. For Scenario B, I used a `Standard_NC6s_v3` Linux GPU VM at `$3.06/hour` for `730` hours per month, which gives `3.06 x 730 = $2233.80` for the VM portion alone. The full Scenario B total was `$2989.02` because it also included an Azure SQL Database in the General Purpose tier with `4 vCores` and `1 TB` of Azure Blob Storage. That means the SQL Database and Blob Storage together added `$755.22` on top of the GPU VM cost. The script output matches the VM-only calculations, while the calculator total for Scenario B is higher because it includes those additional Azure services.
 
 The most surprising part was how quickly the GPU workload cost increased compared with the lightweight VM. Even before adding the SQL Database and Blob Storage charges, the GPU VM alone was already much more expensive than Scenario A. While exploring the calculator, I also noticed how many separate cost levers Azure exposes, including compute size, storage tier, redundancy, and how long a resource runs.
 
