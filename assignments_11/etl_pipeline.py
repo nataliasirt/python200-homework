@@ -1,6 +1,6 @@
 """Week 11 capstone: Prefect ETL pipeline for weather classification.
 
-Video link: TODO
+Video link: https://youtu.be/w6XEVrgQIs4
 """
 
 from __future__ import annotations
